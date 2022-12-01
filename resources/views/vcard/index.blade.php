@@ -21,91 +21,129 @@
     </style>
     @vite('resources/css/app.css')
 </head>
-<body class="antialiased">
-<h1>VCard generator</h1>
-<p>Generate your VCard</p>
-{{-- Link for create a vcard --}}
-<a href="{{ route('vcard.create') }}">Create VCard</a>
+<body class="w-full">
+{{-- Header beautiful TailWindCSS --}}
+<header>
+    <div class="bg-white shadow">
+        <div class=" mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class=" text-center font-bold text-gray-900">
+                LaraVCard
+            </h1>
+        </div>
+    </div>
+</header>
+
+{{-- Link for create a vcard tailwindcsss --}}
+{{--<a href="{{ route('vcard.create') }}" class="bg-blue-500 hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded">Create VCard</a>--}}
+{{--<a href="{{ route('vcard.create') }}">Create VCard</a>--}}
 
 
-<div class="">
-    {{-- List in table by foreach for $vcards  --}}
-    <table class="table table-responsive">
-        <thead>
-        <tr>
-{{--            $vcards->addName('John', 'Doe');--}}
-{{--            $vcards->addCompany('John Doe Inc.');--}}
-{{--            $vcards->addJobtitle('CEO');--}}
-{{--            $vcards->addEmail(' JohnDoe@example.com');--}}
-{{--            $vcards->addPhoneNumber(123456789, 'PREF;WORK');--}}
-{{--            $vcards->addPhoneNumber(987654321, 'WORK');--}}
-{{--            $vcards->addAddress(null, null, 'Street 1', 'City', null, '1234 AB', 'Country');--}}
-{{--            $vcards->addLabel('Street 1' . PHP_EOL . '1234 AB City' . PHP_EOL . 'Country');--}}
-{{--            $vcards->addURL('https://www.johndoe.com');--}}
-{{--            $vcards->addNote('This contact has a note.');--}}
-{{--            $vcards->addBirthday(1972, 12, 22);--}}
-{{--            $vcards->addPhoto('https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50');--}}
-            <td class="col">Frist Name</td>
-            <td class="col">Last Name</td>
-            <td class="col">Company</td>
-            <td class="col">Job Title</td>
-            <td class="col">Email</td>
-            <td class="col">Phone Pref. Work Number</td>
-            <td class="col">Phone Work Number</td>
-            <td class="col">Address name</td>
-            <td class="col">Address extended </td>
-            <td class="col"> street</td>
-            <td class="col"> city</td>
-            <td class="col"> region</td>
-            <td class="col"> postal code</td>
-            <td class="col"> country</td>
-            <td class="col">Address label</td>
-            <td class="col"> url</td>
-            <td class="col"> note</td>
-            <td class="col"> birthday</td>
-            <td class="col"> photo</td>
-            <td>Action</td>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($vcards as $vcard)
-            <tr>
-                <td class="col">{!! $vcard->first_name !!}}</td>
-                <td class="col">{!! $vcard->last_name !!}}</td>
-                <td class="col">{!! $vcard->company !!}}</td>
-                <td class="col">{!! $vcard->job_title !!}}</td>
-                <td class="col">{!! $vcard->email !!}}</td>
-                <td class="col">{!! $vcard->phone_pref_work_number !!}}</td>
-                <td class="col">{!! $vcard->phone_work_number !!}}</td>
-                <td class="col">{!! $vcard->address_name !!}}</td>
-                <td class="col">{!! $vcard->address_extended !!}}</td>
-                <td class="col">{!! $vcard->street !!}}</td>
-                <td class="col">{!! $vcard->city !!}}</td>
-                <td class="col">{!! $vcard->region !!}}</td>
-                <td class="col">{!! $vcard->postal_code !!}}</td>
-                <td class="col">{!! $vcard->country !!}}</td>
-                <td class="col">{!! $vcard->address_label !!}}</td>
-                <td class="col">{!! $vcard->url !!}}</td>
-                <td class="col">{!! $vcard->note !!}}</td>
-                <td class="col">{!! $vcard->birthday !!}}</td>
-                <td class="col">{!! $vcard->photo !!}}</td>
-                <td>
-                    <a href="{{ route('vcard.edit', $vcard->id) }}" class="btn btn-primary">Edit</a>
-                    <form action="{{ route('vcard.delete', $vcard->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                    @if(isset($vcard->id))
-                        <a href="{{ route('vcard.downloadVcard', $vcard->id) }}" class="btn btn-primary">Download</a>
-                    @else
-                        <a href="#" class="btn btn-primary btn-disabled" disabled>Download</a>
-                    @endif
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+    <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full text-center">
+                        <thead class="border-b ">
+                            <tr>
+                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+                                Name
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+                                Company
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+                                Job
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+                                Email
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+                                Phone Pref.
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
+                                Phone
+                            </th>
+                            {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+                            {{--                                Address name--}}
+                            {{--                            </th>--}}
+                            {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+                            {{--                                Address extended--}}
+                            {{--                            </th>--}}
+                            {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+                            {{--                                street--}}
+                            {{--                            </th>--}}
+                            {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+                            {{--                                city--}}
+                            {{--                            </th>--}}
+                            {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+                            {{--                                region--}}
+                            {{--                            </th>--}}
+                            {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+                            {{--                                postal code--}}
+                            {{--                            </th>--}}
+                            {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+                            {{--                                country--}}
+                            {{--                            </th>--}}
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Address label
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                url
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                note
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                birthday
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                photo
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Action
+                            </th>
+                        </tr>
+                        </thead class="border-b">
+                        <tbody>
+                            @foreach($vcards as $vcard)
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->first_name !!} {!! $vcard->last_name !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->company !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->job_title !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->email !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->phone_pref_work_number !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->phone_work_number !!}</td>
+                                {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->address_name !!}</td>--}}
+                                {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->address_extended !!}</td>--}}
+                                {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->street !!}</td>--}}
+                                {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->city !!}</td>--}}
+                                {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->region !!}</td>--}}
+                                {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->postal_code !!}</td>--}}
+                                {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->country !!}</td>--}}
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->address_label !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->url !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->note !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->birthday !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->photo !!}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <a href="{{ route('vcard.edit', $vcard->id) }}" class="bg-gray-100 hover:shadow-lg hover:text-emerald-700 text-gray-900 hover:text-indigo-900 mb-2 mr-2">Edit</a>
+                                    <form class="inline-block" action="{{ route('vcard.delete', $vcard->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-600 hover:text-red-900 mb-2 mr-2">Delete</button>
+                                    </form>
+                                    <a href="{{ route('vcard.downloadVcard', $vcard->id) }}" class="bg-gray-100 hover:shadow-lg hover:text-emerald-700 text-gray-900 hover:text-indigo-900 mb-2 mr-2">Download</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
 </div>
 </body>
 </html>
