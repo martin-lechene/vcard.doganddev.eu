@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>LaraVCard</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,8 +37,22 @@
                 </div>
             @endif
 
+
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div class="mt-8  overflow-hidden shadow sm:rounded-lg">
+                    @foreach($errors as $error)
+                    @if($error)
+                        <div class="grid grid-cols-1">
+                        <div class="p-6 bg-white">
+                            <div class="hover:shadow-lg">
+                                    <ul>
+                                            <li><i class="fas fa-warning"></i><span class="text-red-500">/!\</span> {{ $error }}</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        </div>
+                        @endif
+                    @endforeach
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="flex items-center">
