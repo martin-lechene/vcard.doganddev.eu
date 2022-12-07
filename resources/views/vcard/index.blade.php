@@ -34,7 +34,7 @@
 </header>
 
 {{-- Link for create a vcard tailwindcsss --}}
-{{--<a href="{{ route('vcard.create') }}" class="bg-blue-500 hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded">Create VCard</a>--}}
+<a href="{{ route('vcard.create') }}" class="bg-blue-500 hover:bg-blue-700 text-dark font-bold py-2 px-4 rounded">Create VCard</a>
 {{--<a href="{{ route('vcard.create') }}">Create VCard</a>--}}
 
 
@@ -48,21 +48,21 @@
                             <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
                                 Name
                             </th>
-                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
-                                Company
-                            </th>
-                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
-                                Job
-                            </th>
+{{--                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">--}}
+{{--                                Company--}}
+{{--                            </th>--}}
+{{--                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">--}}
+{{--                                Job--}}
+{{--                            </th>--}}
                             <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
                                 Email
                             </th>
-                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
-                                Phone Pref.
-                            </th>
-                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
-                                Phone
-                            </th>
+{{--                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">--}}
+{{--                                Phone Pref.--}}
+{{--                            </th>--}}
+{{--                            <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">--}}
+{{--                                Phone--}}
+{{--                            </th>--}}
                             {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
                             {{--                                Address name--}}
                             {{--                            </th>--}}
@@ -84,21 +84,21 @@
                             {{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
                             {{--                                country--}}
                             {{--                            </th>--}}
-                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                Address label
-                            </th>
-                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                url
-                            </th>
-                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                note
-                            </th>
-                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                birthday
-                            </th>
-                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                photo
-                            </th>
+{{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+{{--                                Address label--}}
+{{--                            </th>--}}
+{{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+{{--                                url--}}
+{{--                            </th>--}}
+{{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+{{--                                note--}}
+{{--                            </th>--}}
+{{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+{{--                                birthday--}}
+{{--                            </th>--}}
+{{--                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">--}}
+{{--                                photo--}}
+{{--                            </th>--}}
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                 Action
                             </th>
@@ -108,11 +108,11 @@
                             @foreach($vcards as $vcard)
                             <tr class="bg-white border-b">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->first_name !!} {!! $vcard->last_name !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->company !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->job_title !!}</td>
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->company !!}</td>--}}
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->job_title !!}</td>--}}
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->email !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->phone_pref_work_number !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->phone_work_number !!}</td>
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->phone_pref_work_number !!}</td>--}}
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->phone_work_number !!}</td>--}}
                                 {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->address_name !!}</td>--}}
                                 {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->address_extended !!}</td>--}}
                                 {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->street !!}</td>--}}
@@ -120,17 +120,18 @@
                                 {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->region !!}</td>--}}
                                 {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->postal_code !!}</td>--}}
                                 {{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->country !!}</td>--}}
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->address_label !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->url !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->note !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->birthday !!}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->photo !!}</td>
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->address_label !!}</td>--}}
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->url !!}</td>--}}
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->note !!}</td>--}}
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->birthday !!}</td>--}}
+{{--                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{!! $vcard->photo !!}</td>--}}
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     <a href="{{ route('vcard.edit', $vcard->id) }}" class="bg-gray-100 hover:shadow-lg hover:text-emerald-700 text-gray-900 hover:text-indigo-900 mb-2 mr-2">Edit</a>
-                                    <form class="inline-block" action="{{ route('vcard.delete', $vcard->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+{{--                                    Link for delete current vcard --}}
+                                    <form action="{{ route('vcard.destroy', $vcard->id) }}" method="POST" class="inline-block">
                                         @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="text-red-600 hover:text-red-900 mb-2 mr-2">Delete</button>
+                                        @method('HEAD')
+                                        <button type="submit" class="bg-gray-100 hover:shadow-lg hover:text-emerald-700 text-gray-900 hover:text-indigo-900 mb-2 mr-2">Delete</button>
                                     </form>
                                     <a href="{{ route('vcard.downloadVcard', $vcard->id) }}" class="bg-gray-100 hover:shadow-lg hover:text-emerald-700 text-gray-900 hover:text-indigo-900 mb-2 mr-2">Download</a>
                                 </td>

@@ -26,7 +26,7 @@
 <p>Generate your VCard</p>
 
 <div class="">
-    <form class="form" action="{{ route('vcard.downloadVcard', ''.rand(0,10000)).'' }}">
+    <form class="form" action="{{ route('vcard.store') }}" method="GET">
 
         <div class="form-group">
             <label for="lastname">Lastname</label>
@@ -107,6 +107,11 @@
         <div class="form-group">
             <label for="website">Website</label>
             <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+        </div>
+
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input type="hidden" class="form-control" id="count" name="count" placeholder="0" value="0">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
