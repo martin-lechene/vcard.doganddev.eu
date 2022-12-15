@@ -18,6 +18,7 @@ jobs:
           MYSQL_PASSWORD: password
           USER_ADMIN: Admin
           USER_PASSWORD: "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi"
+        options: --socket=/var/run/mysqld/mysqld.sock
       redis:
         image: redis:4.0
         env:
