@@ -46,8 +46,8 @@ jobs:
           DB_USERNAME: username
           DB_PASSWORD: password
         run: vendor/bin/phpunit
-      - name: Create Admin User
-        run: mysql -h localhost -u username -p password -e "INSERT INTO users (username, email, password) VALUES ('admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');"
+#       - name: Create Admin User
+#         run: mysql -h localhost -u username -p password -e "INSERT INTO users (username, email, password) VALUES ('admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');"
 # deploy:
 # runs-on:: ubuntu-latest
 # steps:
