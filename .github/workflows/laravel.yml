@@ -7,8 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  laravel-tests:
-
+  run-laravel:
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -56,9 +55,9 @@ jobs:
       run: vendor/bin/phpunit
     - name: Create Admin User
       run: mysql -h localhost -u username -p password -e "INSERT INTO users (username, email, password) VALUES ('admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');"
-  build:
-    runs-on: ubuntu-latest
-    steps:
+build:
+   runs-on:: ubuntu-latest
+   steps:
     - uses: actions/checkout@v2
     - name: Install Dependencies
       run: composer install
