@@ -55,7 +55,7 @@ jobs:
         DB_PASSWORD: password
       run: vendor/bin/phpunit
     - name: Create Admin User
-      run: mysql -h localhost -u $MYSQL_DATABASE -p$MYSQL_ROOT_PASSWORD -e "INSERT INTO users (username, email, password) VALUES ('admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');"
+      run: mysql -h localhost -u username -p password -e "INSERT INTO users (username, email, password) VALUES ('admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -63,7 +63,7 @@ jobs:
     - name: Install Dependencies
       run: composer install
     - name: Run Artisan Tasks
-      run: php artisan migrate
+      run: php artisan migrate -y
     - name: Run PHPUnit Tests
       run: vendor/bin/phpunit
     - name: Generate Code Coverage Report
