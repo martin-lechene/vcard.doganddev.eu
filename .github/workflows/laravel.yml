@@ -14,7 +14,7 @@ jobs:
           MYSQL_DATABASE: database
           MYSQL_USER: username
           MYSQL_PASSWORD: password
-        options: --socket=/var/run/mysqld/mysqld.sock
+#         options: --socket=/var/run/mysqld/mysqld.sock
       redis:
         image: redis:4.0
         env:
