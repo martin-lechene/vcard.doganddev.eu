@@ -1,2 +1,2 @@
 # vcard-laravel
- Générator of VCard
+Générate your vcard by Laravel 
